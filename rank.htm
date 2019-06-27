@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php include 'metatags.php';?>
+	
+    <title>Rank</title>
+
+    <!-- CSS Stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet"> 
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1 class="seo-header">Los Avenue Rank</h1>
+	
+	<!--Nav Bar-->
+	<?php include 'common/navbar.htm';?>
+	
+	<!-- main part -->
+	<div class="container">
+		<div class="row">
+			<div class="hidden-xs col-md-3">
+				<?php include 'common/left-sidebar.htm';?>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="panel" style="padding:10px;">
+					<h3 align="center">Top Users</h3>
+					<hr class="colorgraph">
+					<?php echo $rankBody;?>
+				</div>
+			</div>
+			
+			<div class="col-md-3"> <!--follow bar-->
+				<?php include 'common/right-sidebar.htm';?>
+			</div>
+		</div>
+	</div>
+	
+	<!--navbar bottom-->
+		<div class="hidden-lg hidden-md">
+			<?php include 'common/navbar-bottom.htm';?>
+		</div>
+	
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/autocomplete.js"></script>
+  </body>
+</html>

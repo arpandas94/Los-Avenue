@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php include 'metatags.php';?>
+	
+    <title><?php echo $userName;?></title>
+
+    <!-- CSS Stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1 class="seo-header">Los Avenue User Profile</h1>
+	
+	<!--Nav Bar-->
+	<?php include 'common/navbar.htm';?>
+	
+	<!-- main part -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+			    <div class="panel" style="margin-bottom: 5px;">
+					<div class="panel-body" style="padding: 5px;">
+						<span style="font-size:15px;"><b><?php echo $profileUserFirstName;?>'s Profile</b></span>
+					</div>
+				</div>
+				<div class="panel panel-default"> <!-- User Profile tab-->
+					<div class="panel-body">
+						<img src="<?php echo $dpPath2;?>?123" height="45px;" width="45px;" style="border-radius:10px; object-fit: cover;" align=left>
+						<span style="font-weight:bold;">&nbsp;<?php echo $userName;?></span><br>
+						<span style="color:#d9534f;" align=center>&nbsp;@<?php echo $userDN;?></span>
+						<hr class="colorgraph">
+						<p align=center><?php echo $userBio;?></p>
+						<table style="width:100%;">
+							<tr align=center>
+								<td width="33.3%"><span data-toggle="tooltip" data-placement="top" title="" data-original-title="Country"><img src="img/icon-location.png" width="25px"></span></td>
+								<td width="33.3%"><span data-toggle="tooltip" data-placement="top" title="" data-original-title="Currency"><img src="img/icon-currency.png" width="25px"></span></td>
+								<td width="33.3%"><span data-toggle="tooltip" data-placement="top" title="" data-original-title="Total Spending"><img src="img/icon-spending.png" width="25px"></span></td>
+							</tr>
+							<tr align=center>
+								<td width="33.3%"> <?php echo $userCountryName;?></td>
+								<td width="33.3%"> <?php echo $userCurrencyName;?></td>
+								<td width="33.3%" style="color:green;"><?php echo $totalSpending;?></td>
+							</tr>
+						</table>
+						<hr class="colorgraph">
+						<a href="follow?uid=<?php echo $profileId;?>&fid=<?php echo $userId;?>"><?php echo $followBtn;?></a>
+						<span data-toggle="tooltip" data-placement="top" title="" data-original-title="Followers: <?php echo $followerCount;?>"><a href="follow-stats?sid=<?php echo $profileId;?>"><img style="border:#ccc solid 1px; padding:2px; border-radius:3px;" src="img/icon-follower.png" width="30px"></span></a>
+						<span data-toggle="tooltip" data-placement="top" title="" data-original-title="Following: <?php echo $followingCount;?>"><a href="follow-stats?sid=<?php echo $profileId;?>"><img style="border:#ccc solid 1px; padding:2px; border-radius:3px;" src="img/icon-following.png" width="30px"></span></a>
+					</div>
+				</div>
+				<?php echo $bioHTML;?>
+			</div>
+			
+			<div class="col-md-6">
+				<div id="feedScroll">
+					<!-- Infinite Scroll -->
+				</div>
+				<div id="loadingGIF">
+					<!-- Infinite Scroll -->
+				</div>
+			</div>
+			
+			<div class="col-md-3"> <!--follow bar-->
+				<?php include 'common/right-sidebar.htm';?>
+			</div>
+		</div>
+	</div>
+	
+	<!--navbar bottom-->
+		<div class="hidden-lg hidden-md">
+			<?php include 'common/navbar-bottom.htm';?>
+		</div>
+	
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/like.js"></script>
+	<script type="text/javascript">
+		var feedCounter = 3;
+		var feedContent = `<?php echo $entryBody;?>`;
+		var feedContentArray = feedContent.split("<eop></eop>");
+		window.onload = getFeedContent;
+		function getFeedContent() 
+		{
+			if(feedContentArray.length>2)
+				document.getElementById("feedScroll").innerHTML = feedContentArray[0]+feedContentArray[1]+feedContentArray[2];
+			
+			if(feedContentArray.length==2)
+				document.getElementById("feedScroll").innerHTML = feedContentArray[0]+feedContentArray[1];
+			
+			if(feedContentArray.length==1)
+				document.getElementById("feedScroll").innerHTML = feedContentArray[0];	
+		}
+		window.onscroll = function(ev) 
+		{
+			if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) 
+			{
+				if(feedCounter < feedContentArray.length)
+				{
+					document.getElementById("loadingGIF").innerHTML = '<img src="img/loading.gif" align=center class="center-block" width="80px">';
+					document.getElementById("feedScroll").innerHTML += feedContentArray[feedCounter];
+					document.getElementById("loadingGIF").innerHTML = '';
+					feedCounter++;
+				}
+			}
+		};
+	</script>
+  </body>
+</html>

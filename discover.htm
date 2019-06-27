@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<?php include 'metatags.php';?>
+	<!-- Facebook Meta-->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Los Avenue" />
+	<meta property="og:description" content="Did you buy something new today or saved a lot on a killer deal? Or do you have something rare? Share it with the world and also see what all your friends are buying." />
+        <meta property="og:image" content="http://losavenue.com/img\background-create-account.png">
+        <meta property="og:url" content="http://losavenue.com/">
+<!-- Twitter meta -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@losavenue">
+	<meta name="twitter:title" content="Los Avenue">
+	<meta name="twitter:description" content="Did you buy something new today or saved a lot on a killer deal? Or do you have something rare? Share it with the world and also see what all your friends are buying.">
+	<meta name="twitter:creator" content="Arpan Das">
+	<meta name="twitter:image" content="http://losavenue.com/img\background-create-account.png">
+	
+    <title>Los Avenue</title>
+
+    <!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css\font-awesome-4.7.0\css\font-awesome.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/masonry.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <h1 class="seo-header">Los Avenue Discover</h1>
+
+	<!-- Banner -->
+	<div class="jumbotron" style="background-image: url(img/login-background-image-3.jpg);  padding:5px;">
+	    <h1 align=center style="color:#fff; font-family: 'Libre Barcode 39 Text', cursive;">Lo<span style="color:#fc1414;">s Ave</span>nue</h1>
+		<h2 align=center style="color:#fff;">Know what your friends are buying?</h2>      
+		<p align=center style="color:#fff;">Did you buy something new today or saved a lot on a killer deal? Share it with All your friends</p>
+		<a href="create-account"><p align=center><span class="btn btn-lg btn-default btn-outline"><b>Join the Club!</b></span></p></a>
+		<h4 align=center>
+			<span class="social-icon"><a href="https://twitter.com/losavenue" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a></span>
+			<span class="social-icon"><a href="https://www.facebook.com/losavenue2017/" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a></span>
+			<span class="social-icon"><a href="https://instagram.com/losavenue" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></span>
+			<span class="social-icon"><a href="mailto:losavenuedesk@gmail.com"><i class="fa fa-envelope-square fa-2x"></i></a></span>
+		</h4>
+	</div>
+	
+	<div class="container">
+		<!-- Masonry Display -->
+		<div class="row">
+			<?php echo $cardDisplay;?>
+		</div>
+	</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
+	<!--Custom JavaScript-->
+	<script src="js/login-verification.js"></script>
+  </body>
+</html>

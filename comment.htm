@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php include 'metatags.php';?>
+	
+	<!-- Facebook meta -->
+	<meta property="og:url" content="http://losavenue.com/comment?sid=<?php echo $entryId; ?>" />
+	<meta property="og:type" content="article" />
+	<?php
+	if($redBoxContent == '<span class="glyphicon glyphicon-barcode"></span>')
+	echo '<meta property="og:title" content="'.$uploaderName.' buys '.$entryBrandName.' '.$entryName.'">';
+	else
+	echo '<meta property="og:title" content="'.$uploaderName.' buys '.$entryBrandName.' '.$entryName.' for '.$redBoxContent.'">';
+	?>
+	<meta property="og:description" content="Join Los Avenue and find out what your friends are buying or let your friends know about that cool new thing that you bought recently and share it on your social platform instantly." />
+	<meta property="og:image" content="http://losavenue.com/img\pic-uploads\<?php echo $entryId;?>.jpg" />
+	<!-- Twitter meta -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@losavenue">
+	<meta name="twitter:title" content="<?php echo $uploaderName.' buys '.$entryBrandName.' '.$entryName;?>">
+	<meta name="twitter:description" content="Join Los Avenue and find out what your friends are buying or let your friends know about that cool new thing that you bought recently and share it on your social platform instantly.">
+	<meta name="twitter:creator" content="Arpan Das">
+	<meta name="twitter:image:src" content="http://losavenue.com/img\pic-uploads\<?php echo $entryId;?>.jpg">
+	
+    <title>Comment</title>
+    <!-- CSS Stylesheets -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet"> 
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1 class="seo-header"><?php echo $uploaderName.' buys '.$entryBrandName.' '.$entryName;?></h1>
+	
+	<!--Nav Bar-->
+	<?php include 'common/navbar.htm';?>
+	
+	<!-- main part -->
+	<div class="container">
+		<div class="row">
+			<div class="hidden-xs col-md-3">
+				<?php include 'common/left-sidebar.htm';?>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="panel"> <!-- status -->
+					<div class="panel-heading" style="padding-bottom:0px;">
+						<b><img align=left src="<?php echo $dpPath3;?>" width=45px; height=45px; style="border-radius:10px; object-fit: cover;">
+						<?php echo $followButton;?>
+						&nbsp;<a href="profile?id=<?php echo $uploaderId;?>"><?php echo $uploaderName;?></a> <span style="font-size:11px; color:#aaa;">&middot; <?php echo $entryTime;?></span></b>
+						<br>&nbsp;<span class="glyphicon glyphicon-globe"></span>&nbsp;<?php echo $uploaderCountryName;?>
+					</div>
+					<div class="panel-body">
+					<p style="margin-top:0px;"><a href="search?q=<?php echo $entryBrandName;?>"><span class="btn btn-default-inverse btn-outline"><b><?php echo $entryBrandName;?></b></span></a> <?php echo $entryName;?></p>
+						<a href="#" class="thumbnail">
+							<img src="img\pic-uploads\<?php echo $entryId;?>.jpg?123" alt="purchase-pic" style="max-height:500px;"> 
+						</a><hr>
+						<h4 class="btn btn-success btn-outline" style="font-size:14px; width:49%;"><b><?php echo $greenBoxContent;?></b></h4> <h4 class="btn btn-danger btn-outline" style="font-size:14px; width:49%;"><b><?php echo $redBoxContent;?></b></h4>
+						<hr><p><?php echo $entryStatus;?></p> <!--status text-->
+						<p><?php echo $tagBody;?></p> <!--Tags-->
+					<hr>
+						Likes: <span class="badge" id="likeCount_'.$entryId.'"><?php echo $likeCount;?></span> Comments: <span class="badge"><?php echo $commentCount;?></span>
+					</div>
+						
+					<div class="panel-footer">
+						<?php echo $likeButton;?>
+						<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flosavenue.com%2Fcomment%3Fsid%3D<?php echo $entryId;?>&amp;src=sdkpreparse" target="_blank" onclick="window.open(this.href,'child','height=200,width=400'); return false;"><span type="button" class="btn btn-sm btn-primary"><span class="fa fa-facebook"></span>&nbsp;&nbsp;SHARE</button></span></a>
+						<a href="https://twitter.com/intent/tweet?counturl=http%3A%2F%2Flosavenue.com%2Fcomment%3Fsid%3D<?php echo $entryId;?>&text=<?php echo $uploaderName.' buys '.$entryBrandName.' '.$entryName;?>&url=http%3A%2F%2Flosavenue.com%2Fcomment%3Fsid%3D<?php echo $entryId;?>&via=losavenue" onclick="window.open(this.href,'child','height=200,width=400'); return false;"><span type="button" class="btn btn-sm btn-info"><span class="fa fa-twitter"></span>&nbsp;&nbsp;TWEET</button></span></a>
+					</div>
+				</div>
+				
+				<div id="errorMsg"><?php echo $errMsg;?></div> <!--Comment notifications-->
+				
+				<div class="panel panel-default" id="comment-anchor"> <!--comment section-->
+					<form action="#" method="post" enctype="multipart/form-data" name="frm-add-comment" target="_self">
+						<div class="input-group">
+							<input type="text" class="form-control" name="txt-comment-name" placeholder="Add Comment">
+							<span class="input-group-btn">
+								<button type="submit" name="sub-comment" class="btn btn-danger" onclick="return check_comment()"><span class="glyphicon glyphicon-comment"></span></button>
+							</span>
+						</div>
+					</form>
+				</div>
+				
+				<!--comment section-->
+				<div id="commentBody">
+					<div class="panel">
+						<div class="panel-body">
+						<b>Comments:</b>
+							<?php echo $commentBody;?>
+						</div>
+					</div>	
+				</div>
+				
+			</div>
+			
+			<div class="col-md-3"> <!--follow bar-->
+				<?php include 'common/right-sidebar.htm';?>
+			</div>
+		</div>
+	</div>
+	
+	<!--navbar bottom-->
+		<div class="hidden-lg hidden-md">
+			<?php include 'common/navbar-bottom.htm';?>
+		</div>
+	
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/comment-check.js"></script>
+	<script type="text/javascript" src="js/like.js"></script>
+	<script src="js/autocomplete.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php include 'metatags.php';?>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Edit Purchase</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+	<body>
+		<h1 class="seo-header">Los Avenue Edit Purchase</h1>
+  
+    <!--Nav Bar-->
+	<?php include 'common/navbar.htm';?>
+	
+	<div class="container">
+		<div class="row">
+			<div class="hidden-xs col-md-3">
+				<?php include 'common/left-sidebar.htm';?>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="panel" style="padding:10px;">
+					<h3 align="center">Edit Purchase</h3>
+					<div id="errorMsg"><?php echo $errMsg;?></div> <!--Error Message-->
+					
+					<!--picture-->
+					<a href="#" class="thumbnail">
+						<img src="img\pic-uploads\<?php echo $txtId;?>.jpg?123" alt="leo" style="max-height:250px;">
+					</a>
+					
+					<form action="#" method="post" enctype="multipart/form-data" name="frm-create-account" target="_self">
+					<div class="row">
+						<div class="col-md-6">
+							<input type="file" class="form-control" name="fileToUpload">
+						</div>
+						<div class="col-md-6">
+							<input type="submit" class="btn btn-warning btn-block" value="Change Picture" name="sbt-dp" onclick="return verify_pic();">
+						</div>
+					</div>
+					</form>
+					
+					<hr>
+					
+					<form action="#" method="post" enctype="multipart/form-data" name="frm-add-purchase" target="_self">
+						<p><label>Brand Name:</label> <input name="txt-brand-name" class="form-control" type="text" size="20" value="<?php echo $txtBrandName;?>"/></p>
+						<p><label>Item Name:</label> <input name="txt-item-name" class="form-control" type="text" size="20" value="<?php echo $txtItemName;?>"/></p>
+						<p><label>Tags:</label>
+						<input name="txt-tags" class="form-control" type="text" size="20" value="<?php echo $txtTags;?>"/></p>
+						<p><label>Price:</label>
+						<div class="row">
+							<div class="col-md-6" style="padding-bottom:5px;">
+								<select name="sel-currency" class="form-control" id="sel-currency">
+									<option value="0">Currency</option>
+									<?php echo $currencyInfo;?>
+								</select>
+							</div>
+							<div class="col-md-6">		
+								<input name="txt-price" id="txt-price" class="form-control" type="number" min=0 step="any" size="20" placeholder="Enter price here" value="<?php echo $txtPrice;?>"/>
+							</div>
+						</div>
+						<input type="checkbox" id="chkhide">&nbsp;Hide Price
+						</p>
+						<p><label>Status:</label></p>
+						<p><textarea class="form-control" rows="4" cols="50" name="txt-status"><?php echo $txtStatus;?></textarea></p>
+						<input type="submit" name="sbt-acct" onclick="return verify_entry()" class="btn btn-danger" value="Post">
+					</form>
+				</div>
+			</div>
+			
+			<div class="col-md-3"> <!--follow bar-->
+				<?php include 'common/right-sidebar.htm';?>
+			</div>
+		</div>
+		
+		<!--navbar bottom-->
+		<div class="hidden-lg hidden-md">
+			<?php include 'common/navbar-bottom.htm';?>
+		</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/entry-edit-verification-2.js"></script>
+	<script src="js/autocomplete.js"></script>
+  </body>
+</html>
