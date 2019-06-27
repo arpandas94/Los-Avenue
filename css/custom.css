@@ -1,0 +1,191 @@
+body
+{
+	padding-top: 70px;
+	padding-bottom: 60px;
+	background-color: #f5f5f5;
+	font-family: 'Lato', sans-serif;
+}
+
+.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9
+{
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.seo-header
+{
+	width:0px;
+	height:0px;
+	font-size:0px;
+	margin:0px;
+}
+
+.colorgraph {
+  height: 2px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+.heading-underline
+{
+	border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(128, 128, 128, .75), rgba(0, 0, 0, 0));
+}
+
+.panel
+{
+	border: 2px solid #fcfcfc; 
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin-bottom: 14px;
+}
+.img-brand
+{
+	display: block;
+	border: 1px solid #ddd;
+	padding: 4px;
+	transition: border .2s ease-in-out;
+	vertical-align: middle;
+	box-sizing: border-box;
+	
+}
+
+.currency-style
+{	
+	position: relative;
+    font-size: 0.8em;
+    font-weight: 400;
+    display: inline-table;
+    vertical-align: super;
+}
+
+.autocomplete-dropdown
+{
+	margin:0px;
+	padding-left:12px;
+}
+
+.autocomplete-result a
+{
+	color: #333;
+	text-decoration: none;
+}
+
+.autocomplete-result a:hover
+{
+	color: #d9534f;
+}
+
+a 
+{
+	color:#444;
+}
+
+a:active,
+a:hover 
+{
+	color:#d9534f;
+	text-decoration:none;
+}
+
+.social-icon a
+{
+	color:#fff;
+}
+
+.social-icon a:active,
+.social-icon a:hover 
+{
+	color:#d9534f;
+	text-decoration:none;
+}
+
+ul.nav li a:hover, ul.nav li a:active 
+{
+    color: #d9534f !important;
+	border-bottom: solid 2px red;
+}
+
+#background-login
+{
+	background: no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#title-login
+{
+	color:#fff;
+	padding: 10px;
+	background-color:rgba(0,0,0,0.7);
+	border-radius: 15px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .3s;
+}
+
+.btn-default.btn-outline {
+    color: #fff;
+}
+
+.btn-default-inverse.btn-outline {
+	border-color: #ccc;
+    color: #333;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+
+.btn-default.btn-outline:hover {
+	color:#333;
+}
+
+.btn-default-inverse.btn-outline:hover {
+	background-color: #333;
+	border-color: #333;
+	color:#fff;
+}
+
+#about-dp
+{
+	box-shadow: 5px 5px 5px #aaa;
+	margin: 5px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+

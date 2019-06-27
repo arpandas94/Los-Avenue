@@ -1,0 +1,62 @@
+<?php 
+	if($userId!=0) //user logged in
+		echo '<div class="panel">
+		<div class="panel-body">
+			<a href="user-account"><img src="'.$dpPath.'?123" height="45px;" width="45px;" style="border-radius:10px; object-fit: cover;" align=left> <span style="font-weight:bold;">&nbsp;'.$userName.'</span><br></a>
+			<p style="color:#d9534f;">&nbsp;@'.$userDN.'</p>
+			<hr class="colorgraph">
+			<table style="width:100%;">
+				<tr align=center>
+					<td width="33.3%"><span data-toggle="tooltip" data-placement="top" title="" data-original-title="Country"><img src="img/icon-location.png" width="25px"></span></td>
+					<td width="33.3%"><span data-toggle="tooltip" data-placement="top" title="" data-original-title="Currency"><img src="img/icon-currency.png" width="25px"></span></td>
+					<td width="33.3%"><span data-toggle="tooltip" data-placement="top" title="" data-original-title="Total Spending"><img src="img/icon-spending.png" width="25px"></span></td>
+				</tr>
+				<tr align=center>
+					<td width="33.3%" style="padding: 1px;">'.$userCountryName.'</td>
+					<td width="33.3%" style="padding:1px;">'.$userCurrencyName.'</td>
+					<td width="33.3%" style="color:green; padding:1px;">'.$totalSpending.'</td>
+				</tr>
+			</table>
+			<hr class="colorgraph">
+			<p align=center><a href="add-purchase"><button type="button" class="btn btn-sm btn-danger" style="width:auto;"><span class="glyphicon glyphicon-circle-arrow-up"></span> <b>Upload</b></button></a>
+			<a href="notifications"><span type="button" class="btn btn-sm btn-default-inverse btn-outline" data-toggle="tooltip" data-placement="top" title="" data-original-title="Notifications"><span class="glyphicon glyphicon-exclamation-sign"></span> '.$notifStat.'</span></a>
+			<a href="exchange-rates"><span type="button" class="btn btn-sm btn-default-inverse btn-outline" data-toggle="tooltip" data-placement="top" title="" data-original-title="Exchange Rates"><i class="fa fa-exchange" aria-hidden="true"></i></span></a>
+			<span data-toggle="tooltip" data-placement="top" title="" data-original-title="Followers: '.$followerCount.'"><a href="follow-stats?sid='.$userId.'"><img style="border:#ccc solid 1px; padding:2px; border-radius:3px;" src="img/icon-follower.png" width="30px"></span></a>
+			<span data-toggle="tooltip" data-placement="top" title="" data-original-title="Following: '.$followingCount.'"><a href="follow-stats?sid='.$userId.'"><img style="border:#ccc solid 1px; padding:2px; border-radius:3px;" src="img/icon-following.png" width="30px"></span></a>
+			</p>
+		</div>
+	</div>';
+	else  //user not logged in
+	{
+		echo '<div class="panel">
+		<div class="panel-body">
+			<p>Login to continue browsing through the entirety of <b>Los Avenue</b></p>
+			<p><a href="login"><button type="button" class="btn btn-default-inverse btn-outline" style="width:auto;"><span class="glyphicon glyphicon-user"></span> <b>Log In</b></button></a></p>
+			<hr class="colorgraph">
+			<p align=center><a href="add-purchase"><button type="button" class="btn btn-sm btn-danger" style="width:auto;"><span class="glyphicon glyphicon-circle-arrow-up"></span> <b>Upload</b></button></a>
+			<a href="notifications"><span type="button" class="btn btn-sm btn-default-inverse btn-outline" data-toggle="tooltip" data-placement="top" title="" data-original-title="Notifications"><span class="glyphicon glyphicon-exclamation-sign"></span></span></a>
+			<a href="exchange-rates"><span type="button" class="btn btn-sm btn-default-inverse btn-outline" data-toggle="tooltip" data-placement="top" title="" data-original-title="Exchange Rates"><i class="fa fa-exchange" aria-hidden="true"></i></span></a>
+			</p>
+		</div>
+		</div>';
+	}
+?>	
+	
+	<div class="panel"> <!-- brand trend tab -->
+		<div class="panel-body">
+			<a href="trending"><b>Trending Brands</b></a>
+			<hr class="colorgraph">
+			<?php echo $trendingTopBrandsTab;?>
+		</div>
+	</div>
+	
+	<div class="panel"> <!-- blog tab -->
+		<div class="panel-body">
+			<a href="blog"><b>Blogs</b></a>
+			<hr class="colorgraph">
+			<a href="https://losavenue.blogspot.in/2018/01/introducing-los-avenue.html" target="_blank"><p><i class="fa fa-newspaper-o" aria-hidden="true" style="color:#d9534f;"></i> | Welcome to <b>Los Avenue</b></p></a>
+			<a href="https://losavenue.blogspot.in/2018/01/how-to-use-los-avenue.html" target="_blank"><p><i class="fa fa-newspaper-o" aria-hidden="true" style="color:#d9534f;"></i> | How to use <b>Los Avenue</b></p></a>
+			<a href="https://www.youtube.com/watch?v=btS9WWP7GFA" target="_blank"><p><i class="fa fa-youtube-play" aria-hidden="true" style="color:#d9534f;"></i> | <b>Los Avenue</b> Ad</p></a>
+		</div>
+	</div>
+

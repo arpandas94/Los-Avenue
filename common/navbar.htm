@@ -1,0 +1,53 @@
+<?php
+
+	if($userId=="0") //user not logged in
+	{
+		$userAvatar="";
+		$logoutOption = '<li><a href="/"><span class="glyphicon glyphicon-user"></span> Login</a></li>';
+	}
+	else
+	{
+		if(!isset($navStyleUser))
+			$navStyleUser="";
+		$userAvatar = '<li><a href="user-account" style="padding-bottom:10px;'.$navStyleUser.'"><img src="'.$dpPath.'?123" width=25px; height=25px; style="border-radius:5px; object-fit: cover;"> '.$userFirstName.'</a></li>';
+		$logoutOption = '<li><a href="logout"><span class="glyphicon glyphicon-off"></span> Logout</a></li>';
+	}
+?>
+
+<link href="css\font-awesome-4.7.0\css\font-awesome.min.css" rel="stylesheet">
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="glyphicon glyphicon-option-vertical"></span> <!-- adds the bar icons on collapsable menu items-->
+			</button>
+			
+			<a class="navbar-brand" href="/">
+				<img alt="Brand" src="img/logo.png?123" height="250%">
+			</a>
+		</div>
+		
+		<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1"> <!-- collapsable item list -->
+				<ul class="nav navbar-nav navbar-right" style="font-size:13px; font-weight:bold;">
+					<li class="hidden-xs hidden-sm"><form action="search" method="GET" class="navbar-form navbar-left">
+							<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search" name="q" autocomplete="on"/>
+							<div class="input-group-btn">
+								<button class="btn btn-default-inverse btn-outline" type="submit">
+									<span class="glyphicon glyphicon-search"></span>
+								</button>
+							</div>
+							</div>
+						</form>
+					</li>
+					<?php echo $userAvatar;?>
+					<li><a href="/" style="<?php echo $navStyleHome;?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+					<li><a href="trending" style="<?php echo $navStyleTrending;?>"><span class="glyphicon glyphicon-fire"></span> Trending</a></li>
+					<li><a href="brands" style="<?php echo $navStyleBrands;?>"><i class="fa fa-tags" aria-hidden="true"></i> Brands</a></li>
+					<li><a href="rank" style="<?php echo $navStyleRates;?>"><span class="glyphicon glyphicon-stats"></span> Rank</a></li>
+					<?php echo $logoutOption;?>
+				</ul>
+		</div>
+	</div>
+</nav>

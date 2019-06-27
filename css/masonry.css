@@ -1,0 +1,28 @@
+.row 
+{
+	-moz-column-width: 18em;
+	-webkit-column-width: 18em;
+	-moz-column-gap: 0.5em;
+	-webkit-column-gap:0.5em;  
+}
+
+.item 
+{
+	display: inline-block;
+	padding:  .25rem;
+	width: 100%; 
+}
+
+.well 
+{
+	position:relative;
+	background-color: #fff;
+	border: 2px solid #fcfcfc; 
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	padding:0px;
+}
+
+body
+{
+	padding: 0px;
+}
